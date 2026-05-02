@@ -3,11 +3,11 @@ const app = express();
 
 app.use(express.json());
 
-// In-memory storage
+
 let users = [];
 let notifications = [];
 
-// Register user
+
 app.post("/users", (req, res) => {
   const user = {
     id: users.length + 1,
@@ -17,7 +17,7 @@ app.post("/users", (req, res) => {
   res.json(user);
 });
 
-// Send notification
+
 app.post("/notifications", (req, res) => {
   const { userId, message } = req.body;
 
@@ -33,7 +33,7 @@ app.post("/notifications", (req, res) => {
   res.json(notification);
 });
 
-// Get user notifications
+
 app.get("/users/:id/notifications", (req, res) => {
   const userId = Number(req.params.id);
 
@@ -44,7 +44,7 @@ app.get("/users/:id/notifications", (req, res) => {
   res.json(userNotifications);
 });
 
-// Mark as read
+
 app.put("/notifications/:id/read", (req, res) => {
   const id = Number(req.params.id);
 

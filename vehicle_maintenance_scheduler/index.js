@@ -8,7 +8,7 @@ app.use(express.json());
 
 const BASE_URL = "http://20.207.122.201/evaluation-service";
 
-// 🔴 PUT YOUR NEW TOKEN HERE
+
 const TOKEN = "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJNYXBDbGFpbXMiOnsiYXVkIjoiaHR0cDovLzIwLjI0NC41Ni4xNDQvZXZhbHVhdGlvbi1zZXJ2aWNlIiwiZW1haWwiOiJ2azQ1MjdAc3JtaXN0LmVkdS5pbiIsImV4cCI6MTc3NzcwMzI5MCwiaWF0IjoxNzc3NzAyMzkwLCJpc3MiOiJBZmZvcmQgTWVkaWNhbCBUZWNobm9sb2dpZXMgUHJpdmF0ZSBMaW1pdGVkIiwianRpIjoiM2Y3MTAzNzQtYjdhNy00YmZhLTlhODEtYjBhNTI2NDg0OWNhIiwibG9jYWxlIjoiZW4tSU4iLCJuYW1lIjoidmljdG9yIGRldmFuYW5kIGtvbmdhbGEiLCJzdWIiOiI0NGE4MzAwNS03MjM0LTQ3MDgtYTExYS03YmEzM2Q0OTFiMWUifSwiZW1haWwiOiJ2azQ1MjdAc3JtaXN0LmVkdS5pbiIsIm5hbWUiOiJ2aWN0b3IgZGV2YW5hbmQga29uZ2FsYSIsInJvbGxObyI6InJhMjMxMTAwNDA1MDAyOSIsImFjY2Vzc0NvZGUiOiJRa2JweEgiLCJjbGllbnRJRCI6IjQ0YTgzMDA1LTcyMzQtNDcwOC1hMTFhLTdiYTMzZDQ5MWIxZSIsImNsaWVudFNlY3JldCI6InhSVk1Td1RVTnhoTlFXdVUifQ.2Cd9u7zTxLJJWfGCQvuEVxuFYDZXyAGFIbu752HFtk0";
 
 const headers = {
@@ -51,7 +51,7 @@ app.get("/schedule", async (req, res) => {
 
       await Log("backend", "info", "service", `Processing depot ${depotId}`);
 
-      // ✅ CORRECT API (QUERY PARAM)
+     
       const vehicleRes = await axios.get(
         `${BASE_URL}/vehicles?depotId=${depotId}`,
         { headers }
